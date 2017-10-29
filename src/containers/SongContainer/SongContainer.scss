@@ -1,0 +1,9 @@
+.margin {
+  margin: 150px auto;
+}
+
+.smallDesktopGrid {
+  @media screen and (max-width: 1450px) {
+    width: 75%;
+  }
+}

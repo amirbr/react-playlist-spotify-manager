@@ -1,0 +1,26 @@
+.slidePlaylist {
+  position: fixed;
+  top: 56px;
+  right: 0;
+  bottom: 0;
+  //width: 370px;
+  background-color: #737373;
+  color: white;
+  overflow: auto;
+  box-shadow: 0 -1px 10px 0 rgba(117,117,117,.7);
+  transition: width 1s;
+}
+.title {
+  text-align: center;
+  font-size: 25px;
+  margin: 50px 0;
+}
+.padding {
+  padding: 15px;
+}
+.closePlaylist {
+  width: 0;
+}
+.openPlaylist {
+  width: 370px;
+}

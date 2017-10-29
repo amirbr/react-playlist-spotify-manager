@@ -1,0 +1,35 @@
+.playerBox {
+  // height: 100px;
+  position: fixed;
+  right: 370px;
+  left: 0;
+  bottom: 0;
+  background-color: #00b0ff;
+  display: flex;
+  box-shadow: 0 -1px 10px 0 rgba(117,117,117,.7);
+  transition: height 0.5s;
+}
+.customContainer {
+  width: 90%;
+  margin: auto;
+  padding: 15px;
+}
+.openPlayer {
+  height: 150px;
+}
+.closePlayer {
+  height: 0;
+}
+.currentSong {
+  font-size: 20px;
+}
+.paddingBottom {
+  padding-bottom: 25px;
+}
+.timeSeparator {
+  font-size: 20px;
+}
+.cursor{
+  cursor: pointer;
+}
+
