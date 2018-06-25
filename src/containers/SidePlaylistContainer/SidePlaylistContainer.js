@@ -3,15 +3,19 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { SongPlaylist } from '../../components';
+import {bindActionCreators} from "multireducer";
+import {addToPlaylist} from "../../redux/modules/songs";
 
 const styles = require('./SidePlaylistContainer.scss');
 
 @connect(
-  state => ({ playlist: state.songs.playlist })
+  state => ({ playlist: state.songs.playlist }),
+  dispatch => bindActionCreators({ addToPlaylist }, dispatch)
 )
 export default class SidePlaylistContainer extends Component {
   static propTypes = {
-    playlist: PropTypes.array.isRequired
+    playlist: PropTypes.array.isRequired,
+    addToPlaylist: PropTypes.func.isRequired,
   };
   constructor(props) {
     super(props);
@@ -36,7 +40,13 @@ export default class SidePlaylistContainer extends Component {
           sidePlaylistToggle: !this.state.sidePlaylistToggle
         });
       }
-      return (<SongPlaylist songData={song} key={song.id} />);
+      return (
+        <SongPlaylist
+          songData={song}
+          key={song.id}
+          addToPlaylistFunc={() => this.props.addToPlaylist(song.id)}
+        />
+      );
     });
     if (this.songsPlaylist.length > 0) {
       this.setState({ sidePlaylistToggle: true });

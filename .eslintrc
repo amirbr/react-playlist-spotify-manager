@@ -20,6 +20,7 @@
     "react/prefer-stateless-function": "off",
     "no-bitwise": "off",
     "react/no-danger": "off",
+    "linebreak-style": 0,
     "indent": ["error", 2, {"SwitchCase": 1}]
   },
   "plugins": [

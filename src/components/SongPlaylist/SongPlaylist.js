@@ -10,13 +10,14 @@ const styles = require('./SongPlaylist.scss');
 )
 export default class SongPlaylist extends Component {
   static propTypes = {
-    songData: PropTypes.object.isRequired
+    songData: PropTypes.object.isRequired,
+    addToPlaylistFunc: PropTypes.func.isRequired
   };
 
   render() {
-    const { songData } = this.props;
+    const { songData, addToPlaylistFunc } = this.props;
     return (
-      <Media className={styles.border}>
+      <Media onClick={addToPlaylistFunc} className={styles.border}>
         <Media.Left align="middle">
           <i className={`${styles.red} fa fa-heart fa-2x`} aria-hidden="true" />
         </Media.Left>
